@@ -11,7 +11,7 @@ Penjelasan singkat tentang cara menjalankan kode ini
 - Lalu buka terminal dan ketik
 ```node index```
 - Check phpmyadmin kalian, apabila table Book outputnya sudah seperti ini berarti sudah benar
-<img src="https://i.ibb.co.com/D7ZZ0VP/image.png" alt="Deskripsi Gambar" width="2000" height="13"/> 
+![alt text](https://raw.githubusercontent.com/Biimmss/Belajar_Sequelize/main/public/book2.jpg?raw=true)
 - Check juga table User apabila outputnya seperti ini berarti sudah benar <img src="https://i.ibb.co.com/nqGkszD/image.png" alt="Deskripsi Gambar" width="2000" height="13"/>
 - Next kalian balik lagi ke terminal lalu ketik 
 ```node ./seeders/seeder.js```
