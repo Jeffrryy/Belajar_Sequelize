@@ -32,7 +32,7 @@ Penjelasan singkat tentang cara menjalankan kode ini
 <br>
 
 <div align="center">
-![alt text](https://raw.githubusercontent.com/Biimmss/Belajar_Sequelize/main/public/logo-bims.jpg?raw=true)
+  <img src="https://raw.githubusercontent.com/Biimmss/Belajar_Sequelize/main/public/logo-bims.jpg" alt="Logo" width="200"/>
 </div>
 
 
