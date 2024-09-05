@@ -32,7 +32,7 @@ Penjelasan singkat tentang cara menjalankan kode ini
 <br>
 
 <div align="center">
-  <img src="https://i.ibb.co.com/zrq6vb8/bims-logo-transformed.jpg" alt="Logo OpenAI" width="200"/>
+  <img src="https://i.ibb.co.com/zrq6vb8/bims-logo-transformed.jpg" alt="Logo" width="200"/>
 </div>
 
 
