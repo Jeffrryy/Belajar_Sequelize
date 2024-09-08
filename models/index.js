@@ -1,8 +1,8 @@
-import User from "../models/UserModel.js";
-import Book from "../models/BookModel.js";
+import Guest from "./GuestModel.js";
+import Room from "./RoomModel.js";
 import db from "../utils/connection.js";
 
-// await User.sync();
-// await Book.sync();
+await Guest.sync()
+await Room.sync()
 
 await db.sync();

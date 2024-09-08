@@ -1,48 +1,41 @@
-import User from "../models/UserModel.js";
-import Book from "../models/BookModel.js";
+import Room from "../models/RoomModel.js";
+import Guest from "../models/GuestModel.js";
 
 const createSeeder = async () => {
-  const user = await User.create({
-    name: "John Doe",
-    email: "john.doe@gmail.com",
+  const guest = await Guest.create({
+    name: "Nicko Christian",
+    email: "Nicko123@gmail.com",
   });
 
-  const book1 = await Book.create({
-    name: "Buku masak",
-    page: 12,
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint eos et dolorum quae vero pariatur reiciendis nobis magni iusto magnam.",
-    UserId: user.dataValues.id,
+  const room1 = await Room.create({
+    roomId:"1A",
+    guestName:"Nicko Christian",
+    checkIn:"10-07-2024",
+    checkOut:"13-07-2024",
+    UserId: guest.dataValues.id,
   });
 
-  const book2 = await Book.create({
-    name: "Buku ngoding",
-    page: 20,
-    description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint eos et dolorum quae vero pariatur reiciendis nobis magni iusto magnam.",
-    UserId: user.dataValues.id,
+  const room2 = await Room.create({
+    roomId:"2A",
+    guestName:"Nicko Christian",
+    checkIn:"13-07-2024",
+    checkOut:"15-07-2024",
+    UserId: guest.dataValues.id,
   });
 
-  const findBookByUser = await Book.findAll({
+  const findRoomByGuest = await Room.findAll({
     where: {
-      UserId: user.dataValues.id,
+      UserId: guest.dataValues.id,
     },
-    attributes: ["name", "page", "description", "UserId"],
-    // include: [
-    //   {
-    //     model: User,
-    //     as: "User",
-    //     required: true,
-    //     attributes: ["name", "email"],
-    //   },
-    // ],
+    attributes: ["roomId", "guestName", "checkIn", "checkOut", "UserId"],
+  
   });
 
-  return findBookByUser;
+  return findRoomByGuest;
 };
 
-const users = await createSeeder();
+const guests = await createSeeder();
 
-users.map((item) => {
+guests.map((item) => {
   console.log(item.dataValues);
 });

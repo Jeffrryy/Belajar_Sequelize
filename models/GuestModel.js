@@ -1,11 +1,11 @@
 import { DataTypes } from "sequelize";
 import db from "../utils/connection.js";
-import Book from "./BookModel.js";
+import Room from "./RoomModel.js";
 
-const User = db.define(
+const Guest = db.define(
   //* memberikan nama model dengan nama User, secara default jika tidak memberikan tablename maka akan menajdi nama jamak
 
-  "User",
+  "Guest",
   {
     id: {
       type: DataTypes.INTEGER,
@@ -23,24 +23,27 @@ const User = db.define(
     },
   },
   {
-    tableName: "user",
+    tableName: "guest",
   }
 );
 
 // relasi User ke Book
 
 //* artinya User bisa memiliki banyak buku
-User.hasMany(Book, {
-  //* cascade digunakan ketika data di tabel referensi dihapus, maka data yang terkait di tabel ini juga akan dihapus
-  onDelete: "CASCADE",
-  onUpdate: "CASCADE",
-});
-
 //* Buku dimiliki satu user
-Book.belongsTo(User, {
+Room.belongsTo(Guest, {
   foreignKey: "UserId",
   onDelete: "CASCADE",
   onUpdate: "CASCADE",
 });
 
-export default User;
+
+Guest.hasMany(Room, {
+  //* cascade digunakan ketika data di tabel referensi dihapus, maka data yang terkait di tabel ini juga akan dihapus
+  onDelete: "CASCADE",
+  onUpdate: "CASCADE",
+});
+
+
+
+export default Guest;

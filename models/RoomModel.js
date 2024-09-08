@@ -1,11 +1,11 @@
 import { DataTypes } from "sequelize";
 import db from "../utils/connection.js";
-import User from "./UserModel.js";
 
-const Book = db.define(
+
+const Room = db.define(
   //* memberikan nama model dengan nama Book, secara default jika tidak memberikan tablename maka akan menajdi nama jamak
 
-  "Book",
+  "Room",
   {
     id: {
       type: DataTypes.INTEGER,
@@ -13,22 +13,26 @@ const Book = db.define(
       autoIncrement: true,
       allowNull: false,
     },
-    name: {
+    roomId: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    page: {
-      type: DataTypes.INTEGER,
+    guestName: {
+      type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    checkIn: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    checkOut: {
       type: DataTypes.STRING,
       allowNull: false,
     },
   },
   {
-    tableName: "book",
+    tableName: "Room",
   }
 );
 
-export default Book;
+export default Room;
